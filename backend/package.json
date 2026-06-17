@@ -1,0 +1,24 @@
+{
+  "name": "Notes Taking App Backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Notes Taking App Backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.2",
+    "mongodb": "^7.3.0",
+    "mongoose": "^9.7.0",
+    "nodemon": "^3.1.14"
+  }
+}
