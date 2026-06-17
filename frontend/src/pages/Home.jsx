@@ -4,7 +4,6 @@ import Notecard from "../components/Notecard";
 
 function Home() {
   const { notes, loading } = useContext(NoteContext);
-  console.log(notes);
 
   if (loading) {
     return (
