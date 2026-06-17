@@ -7,8 +7,10 @@ export const createNote = async (req, res) => {
         .status(400)
         .json({ message: "Title and content are required" });
     }
-    const newNote = new Note({ title, content });
-    await newNote.save();
+    const newNote = await Note.create({
+      title,
+      content,
+    });
     res.status(201).json(newNote);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -29,8 +31,10 @@ export const updateNote = async (req, res) => {
     const { title, content } = req.body;
     const updatedNote = await Note.findByIdAndUpdate(
       req.params.id,
-      { title, content },
-      { new: true },
+      {
+        $set: { title, content },
+      },
+      { new: true }
     );
     if (!updatedNote) {
       return res.status(404).json({ message: "Note not updated" });
